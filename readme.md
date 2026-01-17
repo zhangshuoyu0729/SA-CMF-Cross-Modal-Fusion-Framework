@@ -160,17 +160,3 @@ project/
 - The framework ensures **training–inference consistency** by avoiding test-time distribution estimation.
 - The design supports extension to additional modalities with minimal modification.
 
----
-
-## 9. Citation
-
-If you find this work useful in your research, please consider citing:
-
-```bibtex
-@article{SA-CMF,
-  title={Secondary Attention-Based Cross-Modal Fusion for Deep-Space Target Recognition},
-  author={Zhang, Shuoyu},
-  journal={Under Review},
-  year={2026}
-}
-```
