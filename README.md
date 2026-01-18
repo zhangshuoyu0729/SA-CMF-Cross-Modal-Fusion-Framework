@@ -56,7 +56,7 @@ pip install -r requirements.txt
 
 ## 4. Dataset Preparation
 
-Due to data confidentiality, the dataset itself is not publicly released. However, the expected directory structure and data format are as follows:
+The expected directory structure and data format are as follows:
 
 ```text
 data/
@@ -136,24 +136,12 @@ Visualization results include detection overlays and modality importance maps.
 ```text
 project/
 │
-├── train.py        # training loop and optimization
-├── test.py         # inference and visualization
+├── train.py        # Training loop and optimization
+├── test.py         # Inference and visualization
 ├── model.py        # Transformer and cross-attention modules
 ├── fusion.py       # Copula-based MI estimation and importance update
-├── TWOD_feature.py# image preprocessing and feature extraction
-├── ONED_feature.py # temporal sequence feature construction
-└── utils/
-    ├── metrics
-    ├── similarity
-    └── evaluation tools
+├── TWOD_feature.py # 2D spatial features preprocessing and feature extraction
+├── ONED_feature.py # 1D sequence features construction
+├── attention.py    # Attention to obtain features
+└── transfor.py     # Feature Transformation
 ```
-
----
-
-## 8. Notes
-
-* Mutual information is used for **adaptive fusion control**, not as a direct decision variable.
-* The framework ensures **training–inference consistency** by avoiding test-time distribution estimation.
-* The design supports extension to additional modalities with minimal modification.
-
----
