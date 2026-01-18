@@ -16,14 +16,14 @@ The SA-CMF framework consists of the following stages:
 
 1. **Modality-specific feature extraction**
 
-   * 2D spatial image features are extracted using an InceptionV3 backbone with enhancement preprocessing.
-   * 1D temporal sequence features are constructed from radiation intensity time-series via temporal segmentation and embedding.
+   * 2D spatial features are extracted using an InceptionV3 backbone with enhancement preprocessing.
+   * 1D sequence features are constructed from radiation intensity time-series via temporal segmentation and embedding.
 
 2. **Transformer encoding**
    Independent Transformer Encoders are applied to each modality to preserve intra-modal structural characteristics.
 
 3. **Cross-attention alignment**
-   Bidirectional cross-attention explicitly models inter-modal dependencies between spatial and temporal representations.
+   Bidirectional cross-attention explicitly models inter-modal dependencies between spatial and sequence representations.
 
 4. **Mutual information–driven adaptive fusion**
 
@@ -32,7 +32,7 @@ The SA-CMF framework consists of the following stages:
    * Estimated MI is used to adaptively update modality importance weights, suppressing redundant information.
 
 5. **Prediction and inference**
-   The fused representation supports multi-object detection, classification, and visualization with consistent training–inference behavior.
+   The fused representation supports multi-object classification with consistent training–inference behavior.
 
 ---
 
