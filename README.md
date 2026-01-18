@@ -69,10 +69,6 @@ data/
 └── test/
 ```
 
-* **Image-A / Image-B**: Paired 2D images from different views or sensors.
-* **Seq-A / Seq-B**: Corresponding 1D temporal sequences (e.g., `.npy` or `.txt`).
-* Files are aligned by identical filenames or indices across modalities.
-
 The data loading logic is implemented in `train.py` and `test.py`.
 
 ---
