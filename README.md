@@ -140,8 +140,8 @@ project/
 ├── test.py         # inference and visualization
 ├── model.py        # Transformer and cross-attention modules
 ├── fusion.py       # Copula-based MI estimation and importance update
-├── 2D_feature.py# image preprocessing and feature extraction
-├── 1D_feature.py # temporal sequence feature construction
+├── TWOD_feature.py# image preprocessing and feature extraction
+├── ONED_feature.py # temporal sequence feature construction
 └── utils/
     ├── metrics
     ├── similarity
