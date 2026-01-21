@@ -2,7 +2,7 @@
 
 ## 1. Introduction
 
-This repository implements a **Secondary Attention–Based Cross-Modal Fusion (SA-CMF) framework** for deep-space target recognition. The proposed method integrates **2D spatial image features** and **1D temporal sequence features** through transformer-based encoding, cross-attention alignment, and **mutual information–driven adaptive fusion**.
+This repository implements a **Secondary Attention–Based Cross-Modal Fusion (SA-CMF) framework** for deep-space target recognition. The proposed method integrates **2D spatial features** and **1D sequence features** through transformer-based encoding, cross-attention alignment, and **mutual information–driven adaptive fusion**.
 
 Unlike conventional cross-modal fusion methods that rely solely on attention weights, SA-CMF explicitly models **inter-modal statistical dependency** using a **Copula-based mutual information (MI) formulation**, enabling dynamic importance reweighting, redundancy suppression, and robustness under heterogeneous and low-SNR conditions.
 
@@ -17,7 +17,7 @@ The SA-CMF framework consists of the following stages:
 1. **Modality-specific feature extraction**
 
    * 2D spatial features are extracted using an InceptionV3 backbone with enhancement preprocessing.
-   * 1D sequence features are constructed from radiation intensity time-series via temporal segmentation and embedding.
+   * 1D sequence features are extracted using Transformer via temporal segmentation and embedding.
 
 2. **Transformer encoding**
    Independent Transformer Encoders are applied to each modality to preserve intra-modal structural characteristics.
@@ -112,8 +112,8 @@ The inference pipeline supports **dual-folder input**, **dynamic target detectio
 
 ```bash
 python test.py \
-  --image_dir ./data/test/Image-A \
-  --seq_dir ./data/test/Seq-A \
+  --image_dir ./data/test/2D \
+  --seq_dir ./data/test/1D \
   --ckpt ./checkpoints/best.pth \
   --vis
 ```
