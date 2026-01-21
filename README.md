@@ -17,7 +17,7 @@ The SA-CMF framework consists of the following stages:
 1. **Modality-specific feature extraction**
 
    * 2D spatial features are extracted using an InceptionV3 backbone with enhancement preprocessing.
-   * 1D sequence features are extracted using Transformer via temporal segmentation and embedding.
+   * 1D sequence features are extracted using Transformer network.
 
 2. **Transformer encoding**
    Independent Transformer Encoders are applied to each modality to preserve intra-modal structural characteristics.
