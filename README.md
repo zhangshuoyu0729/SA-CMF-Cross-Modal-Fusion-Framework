@@ -132,27 +132,27 @@ The metric definitions are collected in `metrics.py` for reusable research-code 
 
 ### 7.1 Multiclass Precision, Recall, and F1
 
-Precision, Recall, and F1 are computed from multiclass statistics. The main reported F1 score uses a sample-distribution-aware weighted multiclass setting for imbalanced target categories and engineering deployment scenarios.
+Precision, Recall, and F1 are computed from multiclass prediction statistics. The main reported F1 score uses a sample-distribution-aware weighted multiclass setting for imbalanced target categories and engineering deployment scenarios.
 
 The evaluation code reports weighted, micro, macro, and per-class statistics with explicit names. Weighted F1 is computed directly from multiclass predictions and labels, while macro scores provide supplementary class-balanced references.
 
 ### 7.2 Modality Complementarity Gain (MCG)
 
-MCG measures the effective complementary improvement provided by fused features.
+MCG measures the effective complementary improvement provided by the fused representation. In the implementation, MCG is evaluated after modality alignment, common-scale normalization, and redundancy-aware regulation.
 
-The code represents this chain as **MI-guided redundancy suppression -> fused representation -> complementary gain**. Cross-attention and MI-guided importance updating produce modality-aware representations. `mcg_components_from_fusion_chain()` then maps them to a common scale, estimates redundant overlap, and reports the residual complementary gain of the fused representation over the single-modality/redundancy baseline.
+The code represents this chain as MI-guided redundancy suppression -> fused representation -> complementary gain. Cross-attention and MI-guided importance updating produce modality-aware representations. mcg_components_from_fusion_chain() estimates redundant overlap and reports the residual complementary gain of the fused representation over the single-modality/redundancy baseline.
 
 ### 7.3 Robustness@Missing-Modality (R@MM)
 
-R@MM evaluates normalized robustness when one sensing modality is unavailable.
+R@MM evaluates normalized robustness retention when one sensing modality is unavailable. The implementation follows a missing-modality evaluation path rather than only reporting the final classification score.
 
-The code includes a dedicated missing-modality evaluation path. During evaluation, one modality can be replaced by a missing input and `missing_modality_evaluation()` reports accuracy retention, confidence retention, feature-response stability, and the final R@MM score. The final value is a normalized missing-modality/full-modality retention measure over the combined robustness components.
+During evaluation, one modality can be replaced by a missing input, and missing_modality_evaluation() reports accuracy retention, confidence retention, feature-response stability, and the final R@MM score. The final value is computed as the normalized retention of the missing-modality setting relative to the full-modality setting.
 
 ### 7.4 Inference Time and Samples/s
 
-Inference time and samples/s describe different deployment properties.
+Inference time and samples/s describe different deployment properties. Inference time reports latency-oriented measurements, while samples/s reports throughput-oriented measurements.
 
-The code separates the two benchmark views. `summarize_latency_benchmark()` reports single-sample and batch-forward latency, while `summarize_throughput_benchmark()` reports batched processing rate in samples/s. These values are reported as separate deployment measurements because batch size, hardware scheduling, preprocessing, and parallel execution affect them differently.
+The code separates the two benchmark views. summarize_latency_benchmark() reports single-sample and batch-forward latency, while summarize_throughput_benchmark() reports batched processing rate in samples/s. These values are reported as separate deployment measurements because batch size, hardware scheduling, preprocessing, and parallel execution affect them differently.
 
 ---
 
