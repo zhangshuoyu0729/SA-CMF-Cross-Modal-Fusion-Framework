@@ -7,6 +7,7 @@ This repository implements a **Secondary Attention-Based Cross-Modal Fusion (SA-
 Unlike conventional cross-modal fusion methods that rely only on attention weights, SA-CMF explicitly models **inter-modal statistical dependency** using a **Copula-based mutual information (MI)** formulation. This design supports dynamic importance reweighting, redundancy suppression, and robust recognition under heterogeneous and low-SNR sensing conditions.
 
 If you have any questions, please contact me through 1977146640@qq.com.
+
 ---
 
 ## 2. Framework Overview
