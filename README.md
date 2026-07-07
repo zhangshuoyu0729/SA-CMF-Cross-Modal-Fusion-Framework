@@ -134,9 +134,7 @@ The metric definitions are collected in `metrics.py` for reusable research-code 
 
 ### 7.1 Multiclass Precision, Recall, and F1
 
-Precision, Recall, and F1 are computed from multiclass prediction statistics. The main reported F1 score uses a sample-distribution-aware weighted multiclass setting for imbalanced target categories and engineering deployment scenarios.
-
-The evaluation code reports weighted, micro, macro, and per-class statistics with explicit names. Weighted F1 is computed directly from multiclass predictions and labels, while macro scores provide supplementary class-balanced references.
+In this work, different metrics are computed under different protocols. Precision is calculated based on candidate boxes, where predicted candidate boxes are matched with ground-truth boxes. Recall is also computed at the candidate-box level, using the matched candidate boxes to count true positives and false negatives. The F1 score reported in the code is the weighted F1 score, calculated from multiclass prediction results by comparing predicted labels with ground-truth class labels. In addition, R@K is used as another form of recall for top-K retrieval evaluation, measuring whether the correct target or category appears within the top K ranked results. Therefore, candidate-box Precision/Recall, weighted classification F1, and R@K evaluate different aspects of the model.
 
 ### 7.2 Modality Complementarity Gain (MCG)
 
