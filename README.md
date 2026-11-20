@@ -170,3 +170,5 @@ project/
 |-- attention.py    # Attention utilities
 `-- transfor.py     # Feature transformation
 ```
+## Data Note:
+It is worth noting that the background data in the semi-physical simulation dataset used in this paper comes from a public dataset, based on "li yi ran. Space based target simulation dataset[DS/OL]. V1. Science Data Bank, 2024[2026-11-20]. https://doi.org/10.57760/sciencedb.space.02112. DOI:10.57760/sciencedb.space.02112."
